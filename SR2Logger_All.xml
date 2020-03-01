@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Program name="SR2Logger_All">
+  <Variables>
+    <Variable name="log_ActivationGroup_1" number="0" />
+    <Variable name="log_ActivationGroup_10" number="0" />
+    <Variable name="log_ActivationGroup_2" number="0" />
+    <Variable name="log_ActivationGroup_3" number="0" />
+    <Variable name="log_ActivationGroup_4" number="0" />
+    <Variable name="log_ActivationGroup_5" number="0" />
+    <Variable name="log_ActivationGroup_6" number="0" />
+    <Variable name="log_ActivationGroup_7" number="0" />
+    <Variable name="log_ActivationGroup_8" number="0" />
+    <Variable name="log_ActivationGroup_9" number="0" />
+    <Variable name="log_Altitude_AGL" number="0" />
+    <Variable name="log_Altitude_ASL" number="0" />
+    <Variable name="log_Atmosphere_AirDensity" number="0" />
+    <Variable name="log_Atmosphere_AirPressure" number="0" />
+    <Variable name="log_Atmosphere_SpeedOfSound" number="0" />
+    <Variable name="log_Atmosphere_Temperature" number="0" />
+    <Variable name="log_CurrentPlanet_AtmosphereHeight" number="0" />
+    <Variable name="log_CurrentPlanet_ChildPlanetsCount" number="0" />
+    <Variable name="log_CurrentPlanet_CraftsCount" number="0" />
+    <Variable name="log_CurrentPlanet_Mass" number="0" />
+    <Variable name="log_CurrentPlanet_Name" number="0" />
+    <Variable name="log_CurrentPlanet_Parent" number="0" />
+    <Variable name="log_CurrentPlanet_Radius" number="0" />
+    <Variable name="log_CurrentPlanet_SolarPosition" number="0" />
+    <Variable name="log_Fuel_AllStages" number="0" />
+    <Variable name="log_Fuel_Battery" number="0" />
+    <Variable name="log_Fuel_Mono" number="0" />
+    <Variable name="log_Fuel_Stage" number="0" />
+    <Variable name="log_Input_Brake" number="0" />
+    <Variable name="log_Input_Pitch" number="0" />
+    <Variable name="log_Input_Roll" number="0" />
+    <Variable name="log_Input_Slider1" number="0" />
+    <Variable name="log_Input_Slider2" number="0" />
+    <Variable name="log_Input_Throttle" number="0" />
+    <Variable name="log_Input_TranslateForward" number="0" />
+    <Variable name="log_Input_TranslateRight" number="0" />
+    <Variable name="log_Input_TranslateUp" number="0" />
+    <Variable name="log_Input_Yaw" number="0" />
+    <Variable name="log_Misc_Grounded" number="0" />
+    <Variable name="log_Misc_SolarRadiation" number="0" />
+    <Variable name="log_Name_Craft" number="0" />
+    <Variable name="log_Name_Planet" number="0" />
+    <Variable name="log_Name_TargetName" number="0" />
+    <Variable name="log_Name_TargetPlanet" number="0" />
+    <Variable name="log_Nav_AngleOfAttack" number="0" />
+    <Variable name="log_Nav_BankAngle" number="0" />
+    <Variable name="log_Nav_CraftPitchAxis" number="0" />
+    <Variable name="log_Nav_CraftRollAxis" number="0" />
+    <Variable name="log_Nav_CraftYawAxis" number="0" />
+    <Variable name="log_Nav_East" number="0" />
+    <Variable name="log_Nav_Heading" number="0" />
+    <Variable name="log_Nav_North" number="0" />
+    <Variable name="log_Nav_Pitch" number="0" />
+    <Variable name="log_Nav_Position" number="0" />
+    <Variable name="log_Nav_SideSlip" number="0" />
+    <Variable name="log_Nav_TargetPosition" number="0" />
+    <Variable name="log_Orbit_Apoapsis" number="0" />
+    <Variable name="log_Orbit_Eccentricity" number="0" />
+    <Variable name="log_Orbit_Inclination" number="0" />
+    <Variable name="log_Orbit_Periapsis" number="0" />
+    <Variable name="log_Orbit_Period" number="0" />
+    <Variable name="log_Orbit_TimeToApoapsis" number="0" />
+    <Variable name="log_Orbit_TimeToPeriapsis" number="0" />
+    <Variable name="log_Performance_CurrentISP" number="0" />
+    <Variable name="log_Performance_EngineThrust" number="0" />
+    <Variable name="log_Performance_Mass" number="0" />
+    <Variable name="log_Performance_MaxEngineThrust" number="0" />
+    <Variable name="log_Performance_StageBurnTime" number="0" />
+    <Variable name="log_Performance_StageDeltaV" number="0" />
+    <Variable name="log_Performance_TWR" number="0" />
+    <Variable name="log_SurfaceVelocity" number="0" />
+    <Variable name="log_Time_FrameDeltaTime" number="0" />
+    <Variable name="log_Time_TimeSinceLaunch" number="0" />
+    <Variable name="log_Time_TotalTime" number="0" />
+    <Variable name="log_Velocity_Acceleration" number="0" />
+    <Variable name="log_Velocity_Angular" number="0" />
+    <Variable name="log_Velocity_Gravity" number="0" />
+    <Variable name="log_Velocity_Lateral" number="0" />
+    <Variable name="log_Velocity_MachNumber" number="0" />
+    <Variable name="log_Velocity_Orbit" number="0" />
+    <Variable name="log_Velocity_Surface" number="0" />
+    <Variable name="log_Velocity_Target" number="0" />
+    <Variable name="log_Velocity_Vertical" number="0" />
+    <Variable name="LogFrequency" number="0" />
+    <Variable name="LogUpdateWait" number="0" />
+  </Variables>
+  <Instructions>
+    <Event event="FlightStart" id="0" style="flight-start" pos="-305.6033,-1439.764" />
+    <Comment id="1" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Nav" />
+    </Comment>
+    <While id="2" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="3" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_Position" />
+          <CraftProperty property="Nav.Position" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="4" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_TargetPosition" />
+          <CraftProperty property="Target.Position" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="5" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_Heading" />
+          <CraftProperty property="Nav.CraftHeading" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="6" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_Pitch" />
+          <CraftProperty property="Nav.Pitch" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="7" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_BankAngle" />
+          <CraftProperty property="Nav.BankAngle" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="8" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_AngleOfAttack" />
+          <CraftProperty property="Nav.AngleOfAttack" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="9" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_SideSlip" />
+          <CraftProperty property="Nav.SideSlip" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="10" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_North" />
+          <CraftProperty property="Nav.North" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="11" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_East" />
+          <CraftProperty property="Nav.East" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="12" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_CraftRollAxis" />
+          <CraftProperty property="Nav.CraftDirection" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="13" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_CraftPitchAxis" />
+          <CraftProperty property="Nav.CraftRight" style="prop-nav" />
+        </SetVariable>
+        <SetVariable id="14" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Nav_CraftYawAxis" />
+          <CraftProperty property="Nav.CraftUp" style="prop-nav" />
+        </SetVariable>
+        <WaitSeconds id="15" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="16" style="flight-start" pos="-338.9322,-716.15" />
+    <Comment id="17" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Orbit" />
+    </Comment>
+    <While id="18" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="19" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_Apoapsis" />
+          <CraftProperty property="Orbit.Apoapsis" style="prop-orbit" />
+        </SetVariable>
+        <SetVariable id="20" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_Periapsis" />
+          <CraftProperty property="Orbit.Periapsis" style="prop-orbit" />
+        </SetVariable>
+        <SetVariable id="21" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_TimeToApoapsis" />
+          <CraftProperty property="Orbit.TimeToApoapsis" style="prop-orbit" />
+        </SetVariable>
+        <SetVariable id="22" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_TimeToPeriapsis" />
+          <CraftProperty property="Orbit.TimeToPeriapsis" style="prop-orbit" />
+        </SetVariable>
+        <SetVariable id="23" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_Eccentricity" />
+          <CraftProperty property="Orbit.Eccentricity" style="prop-orbit" />
+        </SetVariable>
+        <SetVariable id="24" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_Inclination" />
+          <CraftProperty property="Orbit.Inclination" style="prop-orbit" />
+        </SetVariable>
+        <SetVariable id="25" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Orbit_Period" />
+          <CraftProperty property="Orbit.Period" style="prop-orbit" />
+        </SetVariable>
+        <WaitSeconds id="26" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="27" style="flight-start" pos="-347.9799,-56.61801" />
+    <Comment id="28" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Performance" />
+    </Comment>
+    <While id="29" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="30" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_EngineThrust" />
+          <CraftProperty property="Performance.CurrentEngineThrust" style="prop-performance" />
+        </SetVariable>
+        <SetVariable id="31" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_Mass" />
+          <CraftProperty property="Performance.Mass" style="prop-performance" />
+        </SetVariable>
+        <SetVariable id="32" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_MaxEngineThrust" />
+          <CraftProperty property="Performance.MaxActiveEngineThrust" style="prop-performance" />
+        </SetVariable>
+        <SetVariable id="33" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_TWR" />
+          <CraftProperty property="Performance.TWR" style="prop-performance" />
+        </SetVariable>
+        <SetVariable id="34" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_CurrentISP" />
+          <CraftProperty property="Performance.CurrentIsp" style="prop-performance" />
+        </SetVariable>
+        <SetVariable id="35" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_StageDeltaV" />
+          <CraftProperty property="Performance.StageDeltaV" style="prop-performance" />
+        </SetVariable>
+        <SetVariable id="36" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Performance_StageBurnTime" />
+          <CraftProperty property="Performance.BurnTime" style="prop-performance" />
+        </SetVariable>
+        <WaitSeconds id="37" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="38" style="flight-start" pos="-1112.113,-53.50229" />
+    <SetVariable id="39" style="set-variable">
+      <Variable list="false" local="false" variableName="LogFrequency" />
+      <Constant text="5" />
+    </SetVariable>
+    <SetVariable id="40" style="set-variable">
+      <Variable list="false" local="false" variableName="LogUpdateWait" />
+      <BinaryOp op="/" style="op-div">
+        <Constant text="1" />
+        <Variable list="false" local="false" variableName="LogFrequency" />
+      </BinaryOp>
+    </SetVariable>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="41" style="flight-start" pos="-1114.296,-241.858" />
+    <Comment id="42" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - ActivationGroup" />
+    </Comment>
+    <While id="43" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="44" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_1" />
+          <ActivationGroup style="activation-group">
+            <Constant number="1" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="45" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_2" />
+          <ActivationGroup style="activation-group">
+            <Constant text="2" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="46" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_3" />
+          <ActivationGroup style="activation-group">
+            <Constant text="3" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="47" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_4" />
+          <ActivationGroup style="activation-group">
+            <Constant text="4" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="48" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_5" />
+          <ActivationGroup style="activation-group">
+            <Constant text="5" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="49" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_6" />
+          <ActivationGroup style="activation-group">
+            <Constant text="6" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="50" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_7" />
+          <ActivationGroup style="activation-group">
+            <Constant text="7" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="51" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_8" />
+          <ActivationGroup style="activation-group">
+            <Constant text="8" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="52" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_9" />
+          <ActivationGroup style="activation-group">
+            <Constant text="9" />
+          </ActivationGroup>
+        </SetVariable>
+        <SetVariable id="53" style="set-variable">
+          <Variable list="false" local="false" variableName="log_ActivationGroup_10" />
+          <ActivationGroup style="activation-group">
+            <Constant text="10" />
+          </ActivationGroup>
+        </SetVariable>
+        <WaitSeconds id="54" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="55" style="flight-start" pos="-1108.61,-978.1211" />
+    <Comment id="56" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Input" />
+    </Comment>
+    <While id="57" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="58" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Roll" />
+          <CraftProperty property="Input.Roll" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="59" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Pitch" />
+          <CraftProperty property="Input.Pitch" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="60" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Yaw" />
+          <CraftProperty property="Input.Yaw" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="61" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Throttle" />
+          <CraftProperty property="Input.Throttle" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="62" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Brake" />
+          <CraftProperty property="Input.Brake" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="63" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Slider1" />
+          <CraftProperty property="Input.Slider1" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="64" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_Slider2" />
+          <CraftProperty property="Input.Slider2" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="65" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_TranslateForward" />
+          <CraftProperty property="Input.TranslateForward" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="66" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_TranslateRight" />
+          <CraftProperty property="Input.TranslateRight" style="prop-input" />
+        </SetVariable>
+        <SetVariable id="67" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Input_TranslateUp" />
+          <CraftProperty property="Input.TranslateUp" style="prop-input" />
+        </SetVariable>
+        <WaitSeconds id="68" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="69" style="flight-start" pos="-1115.835,-1710.24" />
+    <Comment id="70" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Name" />
+    </Comment>
+    <While id="71" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="72" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Name_Craft" />
+          <CraftProperty property="Name.Craft" style="prop-name" />
+        </SetVariable>
+        <SetVariable id="73" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Name_Planet" />
+          <CraftProperty property="Orbit.Planet" style="prop-name" />
+        </SetVariable>
+        <SetVariable id="74" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Name_TargetName" />
+          <CraftProperty property="Target.Name" style="prop-name" />
+        </SetVariable>
+        <SetVariable id="75" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Name_TargetPlanet" />
+          <CraftProperty property="Target.Planet" style="prop-name" />
+        </SetVariable>
+        <WaitSeconds id="76" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="77" style="flight-start" pos="682.8658,-577.8429" />
+    <Comment id="78" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Altitude" />
+    </Comment>
+    <While id="79" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="80" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Altitude_AGL" />
+          <CraftProperty property="Altitude.AGL" style="prop-altitude" />
+        </SetVariable>
+        <SetVariable id="81" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Altitude_ASL" />
+          <CraftProperty property="Altitude.ASL" style="prop-altitude" />
+        </SetVariable>
+        <WaitSeconds id="82" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="83" style="flight-start" pos="662.0094,-121.0692" />
+    <Comment id="84" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Atmosphere" />
+    </Comment>
+    <While id="85" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="86" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Atmosphere_AirDensity" />
+          <CraftProperty property="Atmosphere.AirDensity" style="prop-atmosphere" />
+        </SetVariable>
+        <SetVariable id="87" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Atmosphere_AirPressure" />
+          <CraftProperty property="Atmosphere.AirPressure" style="prop-atmosphere" />
+        </SetVariable>
+        <SetVariable id="88" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Atmosphere_SpeedOfSound" />
+          <CraftProperty property="Atmosphere.SpeedOfSound" style="prop-atmosphere" />
+        </SetVariable>
+        <SetVariable id="89" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Atmosphere_Temperature" />
+          <CraftProperty property="Atmosphere.Temperature" style="prop-atmosphere" />
+        </SetVariable>
+        <WaitSeconds id="90" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="91" style="flight-start" pos="690.0674,-1540.239" />
+    <Comment id="92" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - CurrentPlanet" />
+    </Comment>
+    <While id="93" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="94" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_Name" />
+          <CraftProperty property="Orbit.Planet" style="prop-name" />
+        </SetVariable>
+        <SetVariable id="95" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_Mass" />
+          <Planet op="Radius" style="planet">
+            <CraftProperty property="Orbit.Planet" style="prop-name" />
+          </Planet>
+        </SetVariable>
+        <SetVariable id="96" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_Radius" />
+          <Planet op="radius" style="planet">
+            <CraftProperty property="Orbit.Planet" style="prop-name" />
+          </Planet>
+        </SetVariable>
+        <SetVariable id="97" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_AtmosphereHeight" />
+          <Planet op="atmosphereHeight" style="planet">
+            <CraftProperty property="Orbit.Planet" style="prop-name" />
+          </Planet>
+        </SetVariable>
+        <SetVariable id="98" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_SolarPosition" />
+          <Planet op="solarPosition" style="planet">
+            <CraftProperty property="Orbit.Planet" style="prop-name" />
+          </Planet>
+        </SetVariable>
+        <SetVariable id="99" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_ChildPlanetsCount" />
+          <ListOp op="length" style="list-length">
+            <Planet op="childPlanets" style="planet">
+              <CraftProperty property="Orbit.Planet" style="prop-name" />
+            </Planet>
+          </ListOp>
+        </SetVariable>
+        <SetVariable id="100" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_CraftsCount" />
+          <ListOp op="length" style="list-length">
+            <Planet op="crafts" style="planet">
+              <CraftProperty property="Orbit.Planet" style="prop-name" />
+            </Planet>
+          </ListOp>
+        </SetVariable>
+        <SetVariable id="101" style="set-variable">
+          <Variable list="false" local="false" variableName="log_CurrentPlanet_Parent" />
+          <Planet op="parent" style="planet">
+            <CraftProperty property="Orbit.Planet" style="prop-name" />
+          </Planet>
+        </SetVariable>
+        <WaitSeconds id="102" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="103" style="flight-start" pos="686.7919,-903.4629" />
+    <Comment id="104" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Velocity" />
+    </Comment>
+    <While id="105" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="106" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Surface" />
+          <CraftProperty property="Vel.SurfaceVelocity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="107" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Orbit" />
+          <CraftProperty property="Vel.OrbitVelocity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="108" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Target" />
+          <CraftProperty property="Target.Velocity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="109" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Gravity" />
+          <CraftProperty property="Vel.Gravity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="110" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Acceleration" />
+          <CraftProperty property="Vel.Acceleration" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="111" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Angular" />
+          <CraftProperty property="Vel.AngularVelocity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="112" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Lateral" />
+          <CraftProperty property="Vel.LateralSurfaceVelocity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="113" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_Vertical" />
+          <CraftProperty property="Vel.VerticalSurfaceVelocity" style="prop-velocity" />
+        </SetVariable>
+        <SetVariable id="114" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Velocity_MachNumber" />
+          <CraftProperty property="Vel.MachNumber" style="prop-velocity" />
+        </SetVariable>
+        <WaitSeconds id="115" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="116" style="flight-start" pos="1761.632,-1045.336" />
+    <Comment id="117" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Fuel" />
+    </Comment>
+    <While id="118" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="119" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Fuel_Battery" />
+          <CraftProperty property="Fuel.Battery" style="prop-fuel" />
+        </SetVariable>
+        <SetVariable id="120" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Fuel_Stage" />
+          <CraftProperty property="Fuel.FuelInStage" style="prop-fuel" />
+        </SetVariable>
+        <SetVariable id="121" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Fuel_Mono" />
+          <CraftProperty property="Fuel.Mono" style="prop-fuel" />
+        </SetVariable>
+        <SetVariable id="122" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Fuel_AllStages" />
+          <CraftProperty property="Fuel.AllStages" style="prop-fuel" />
+        </SetVariable>
+        <WaitSeconds id="123" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="124" style="flight-start" pos="1767.462,-637.996" />
+    <Comment id="125" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Misc" />
+    </Comment>
+    <While id="126" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="127" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Misc_Grounded" />
+          <CraftProperty property="Misc.Grounded" style="prop-misc" />
+        </SetVariable>
+        <SetVariable id="128" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Misc_SolarRadiation" />
+          <CraftProperty property="Misc.SolarRadiation" style="prop-misc" />
+        </SetVariable>
+        <WaitSeconds id="129" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Instructions>
+    <Event event="FlightStart" id="130" style="flight-start" pos="1766.256,-225.7478" />
+    <Comment id="131" style="comment">
+      <Constant style="comment-text" canReplace="false" text="SR2Logger - Time" />
+    </Comment>
+    <While id="132" style="while">
+      <Constant style="true" bool="true" />
+      <Instructions>
+        <SetVariable id="133" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Time_FrameDeltaTime" />
+          <CraftProperty property="Time.FrameDeltaTime" style="prop-time" />
+        </SetVariable>
+        <SetVariable id="134" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Time_TimeSinceLaunch" />
+          <CraftProperty property="Time.TimeSinceLaunch" style="prop-time" />
+        </SetVariable>
+        <SetVariable id="135" style="set-variable">
+          <Variable list="false" local="false" variableName="log_Time_TotalTime" />
+          <CraftProperty property="Time.TotalTime" style="prop-time" />
+        </SetVariable>
+        <WaitSeconds id="136" style="wait-seconds">
+          <Variable list="false" local="false" variableName="LogUpdateWait" />
+        </WaitSeconds>
+      </Instructions>
+    </While>
+  </Instructions>
+  <Expressions />
+</Program>
