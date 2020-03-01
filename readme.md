@@ -42,4 +42,6 @@ Instructions:
 To close the panes: 
 	click in an individual pane, and hit Alt+F4
 (I will be adding some gui control elements in the future) 
+
+YOU MUST CLOSE ALL THE PANES FOR THE PROGRAM TO GRACEFULLY EXIT
 ***
