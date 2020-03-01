@@ -1,9 +1,14 @@
 This isn't even Alpha grade code. 
 
+
 Requirements:
+
 	SR2 running in 1280 x 800 (dont ask, just do it)
+	
 	SR2Logger mod installed and enabled
+	
 	this git repo cloned locally on your disk
+
 
 Instructions:
 
